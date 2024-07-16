@@ -1,22 +1,32 @@
 Landsat Processing Commands
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Docker Container   | docker run --name ARCSI_Landsat -it -v C:\Users\powelj\Documents\Aotea_test_files\Landsat:/landsat bcol845/arcsi:latest
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Merge DEM	   | python landsat/scripts/dem_merge.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Process		   | python landsat/scripts/process.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Extract		   | python landsat/scripts/extract.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Clip		   | python landsat/scripts/aoi_clip.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Directory Clear	   | python landsat/scripts/directory_clear.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Batch Command	   | python landsat/scripts/build_batch.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Check Data	   | python landsat/scripts/check_data.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-GeoTIFF Translate  | python landsat/scripts/translate.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-File Sort	   | python landsat/scripts/file_sort.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+________________
+
+Docker Container  | docker run --name ARCSI_Landsat -it -v C:\path\to\folder\Landsat:/landsat bcol845/arcsi:latest
+________________
+
+Merge DEM	  | python landsat/scripts/dem_merge.py
+________________
+
+Process		  | python landsat/scripts/process.py
+________________
+
+Extract		  | python landsat/scripts/extract.py
+________________
+
+Clip		  | python landsat/scripts/aoi_clip.py
+________________
+
+Directory Clear	  | python landsat/scripts/directory_clear.py
+________________
+
+Batch Command	  | python landsat/scripts/build_batch.py
+________________
+
+Check Data	  | python landsat/scripts/check_data.py
+________________
+
+GeoTIFF Translate | python landsat/scripts/translate.py
+________________
+
+File Sort	  | python landsat/scripts/file_sort.py
+________________

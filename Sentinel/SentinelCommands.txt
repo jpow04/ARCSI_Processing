@@ -1,20 +1,31 @@
 Sentinel Processing Commands
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Docker Container   | docker run --name ARCSI_Sentinel -it -v C:\Users\powelj\Documents\Aotea_test_files\Sentinel:/sentinel bcol845/arcsi:latest
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Merge DEM	   | python sentinel/scripts/dem_merge.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Process		   | python sentinel/scripts/process.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Clip		   | python sentinel/scripts/aoi_clip.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Directory Clear	   | python sentinel/scripts/directory_clear.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Batch Command	   | python sentinel/scripts/build_batch.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Check Data	   | python sentinel/scripts/check_data.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-GeoTIFF Translate  | python sentinel/scripts/translate.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-File Sort	   | python sentinel/scripts/file_sort.py
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+________________
+
+Docker Container  | docker run --name ARCSI_Sentinel -it -v C:\path\to\folder\Sentinel:/sentinel bcol845/arcsi:latest
+________________
+
+Merge DEM	  | python sentinel/scripts/dem_merge.py
+________________
+
+Process		  | python sentinel/scripts/process.py
+________________
+
+Clip		  | python sentinel/scripts/aoi_clip.py
+________________
+
+Directory Clear   | python sentinel/scripts/directory_clear.py
+________________
+
+Batch Command	  | python sentinel/scripts/build_batch.py
+________________
+
+Check Data	  | python sentinel/scripts/check_data.py
+________________
+
+GeoTIFF Translate | python sentinel/scripts/translate.py
+________________
+
+File Sort	  | python sentinel/scripts/file_sort.py
+________________
+
+
