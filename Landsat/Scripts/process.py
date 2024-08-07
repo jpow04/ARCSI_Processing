@@ -7,6 +7,7 @@ from file_sort import organize_output_folders
 from directory_clear import clear_directory
 from directory_clear import remove_directory
 from check_data import remove_null_data
+from check_data import log_file_errors
 
 # Function that calls to all scripts for complete processing of Landsat data
 def prepare_landsat_data():
@@ -21,7 +22,8 @@ def prepare_landsat_data():
     print(f"Processing complete | Postprocessing...")
     remove_directory(temp_directory)  # Remove temp directory (directory_clear.py)
     remove_directory(input_directory)  # Remove input directory (directory_clear.py)
-    remove_null_data(output_directory)  # Clear bad data (check_data.py)
+    log_file_errors(output_directory, log_directory, expected_products)  # Log unprocessed files (check_data.py)
+    remove_null_data(output_directory, expected_products)  # Clear bad data (check_data.py)
     postprocess(output_directory)  # Covert .kea to GeoTIFF then remove .kea (translate.py)
     organize_output_folders(output_directory)  # Sort files by date (file_sort.py)
     print(f"Processed files located in {output_directory}")
@@ -41,6 +43,8 @@ if __name__ == "__main__":
     output_directory = "landsat/Outputs"
     shapefile_path = "landsat/Data/aotea_landsat_aoi"
     dem_directory = "landsat/Data/aotea_dem.tif"
-    command_name = "LSARCSIC.sh"
+    command_name = "LSARCSI.sh"
+    log_directory = "landsat/Log"
+    expected_products = 5
     # Call functions
     prepare_landsat_data()

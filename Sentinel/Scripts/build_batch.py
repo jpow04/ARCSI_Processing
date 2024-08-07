@@ -43,8 +43,8 @@ def batch_parameters(output_dir, dem_dir, temp_dir, input_dir, batch_process):
         'dem': dem_dir,  # DEM directory
         'demnodata': -99.0,  # No data value for dem
         'cloudmethods': 'S2LESSFMSK',  # Cloud mask method
-        'fullimgouts': True,  # Include full image outputs flag
-        'keepfileends': ['meta.json', 'stdsref.kea'],  # File endings to keep
+        'fullimgouts': False,  # Include full image outputs flag
+        'keepfileends': ['meta.json', 'stdsref.kea', 'rad.kea'],  # File endings to keep
         'tmpath': temp_dir,  # Temp directory
         'i': input_dir,  # Input directory
         'e': '*MTD*.xml',  # Metadata file to search for
@@ -79,6 +79,6 @@ if __name__ == "__main__":
     dem_directory = "sentinel/Data/aotea_dem.tif"
     temp_directory = "sentinel/tmp"
     input_directory = "sentinel/Inputs"
-    command_name = "S2ARCSIC.sh"
+    command_name = "S2ARCSI.sh"
     # Call functions
     batch_parameters(output_directory, dem_directory, temp_directory, input_directory, command_name)

@@ -78,6 +78,6 @@ if __name__ == "__main__":
     dem_directory = "landsat/Data/aotea_dem.tif"
     temp_directory = "landsat/tmp"
     input_directory = "landsat/Inputs"
-    command_name = "LSARCSIC.sh"
+    command_name = "LSARCSI.sh"
     # Call functions
     batch_parameters(output_directory, dem_directory, temp_directory, input_directory, command_name)

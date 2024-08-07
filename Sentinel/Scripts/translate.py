@@ -70,7 +70,7 @@ def postprocess(input_dir):
 # Execute script
 if __name__ == "__main__":
     # Define directories
-    input_directory = "sentinel/Outputs"
+    output_directory = "sentinel/Outputs"
     # Call functions
-    convert_kea_to_geotiff(input_directory)
-    remove_kea_files(input_directory)
+    convert_kea_to_geotiff(output_directory)
+    remove_kea_files(output_directory)

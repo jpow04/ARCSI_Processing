@@ -31,10 +31,37 @@ def organize_output_folders(input_dir):
                 shutil.move(item_path, dest_path)
                 '''tqdm.write(f"Moved {item} to {year_folder_path}")'''  # Terminal output
 
+def organize_xml_files(input_dir):
+    # Get all subdirectories in the input directory
+    subdirectories = [os.path.join(input_dir, d) for d in os.listdir(input_dir) if
+                      os.path.isdir(os.path.join(input_dir, d))]
+
+    # Initialize tqdm progress bar for subdirectories
+    with tqdm(total=len(subdirectories), desc="Sorting .xml files") as pbar:
+        for subdirectory in subdirectories:
+            # Traverse the output directory
+            for root, dirs, files in os.walk(subdirectory):
+                # List to hold XML files in the current folder
+                xml_files = [file for file in files if file.endswith('.xml')]
+
+                # If there are XML files, create an XML subfolder and move the files
+                if xml_files:
+                    xml_folder = os.path.join(root, 'XML')
+                    os.makedirs(xml_folder, exist_ok=True)
+
+                    for xml_file in xml_files:
+                        src_path = os.path.join(root, xml_file)
+                        dest_path = os.path.join(xml_folder, xml_file)
+                        shutil.move(src_path, dest_path)
+                        # print(f"Moved {xml_file} to {xml_folder}")
+
+            pbar.update(1)  # Update the progress bar after processing each subdirectory
+
 
 # Execute script
 if __name__ == "__main__":
     # Define directories
     output_directory = "landsat/Outputs"
     # Call functions
+    organize_xml_files(output_directory)
     organize_output_folders(output_directory)
