@@ -68,7 +68,7 @@ if __name__ == "__main__":
     # Define directories
     output_directory = "sentinel/Outputs"
     log_directory = "sentinel/Log"
-    expected_products = 9
+    expected_products = 5
     # Call functions
     log_file_errors(output_directory, log_directory, expected_products)
     remove_null_data(output_directory, expected_products)

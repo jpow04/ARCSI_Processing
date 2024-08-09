@@ -42,6 +42,6 @@ if __name__ == "__main__":
     dem_directory = "sentinel/Data/aotea_dem.tif"
     command_name = "S2ARCSI.sh"
     log_directory = "sentinel/Log"
-    expected_products = 9
+    expected_products = 5
     # Call functions
     prepare_sentinel_data()

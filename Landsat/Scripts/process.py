@@ -8,6 +8,7 @@ from directory_clear import clear_directory
 from directory_clear import remove_directory
 from check_data import remove_null_data
 from check_data import log_file_errors
+from file_sort import organize_xml_files
 
 # Function that calls to all scripts for complete processing of Landsat data
 def prepare_landsat_data():
@@ -25,6 +26,7 @@ def prepare_landsat_data():
     log_file_errors(output_directory, log_directory, expected_products)  # Log unprocessed files (check_data.py)
     remove_null_data(output_directory, expected_products)  # Clear bad data (check_data.py)
     postprocess(output_directory)  # Covert .kea to GeoTIFF then remove .kea (translate.py)
+    organize_xml_files(output_directory)  # Sorts .xml files into directory for organization (file_sort.py)
     organize_output_folders(output_directory)  # Sort files by date (file_sort.py)
     print(f"Processed files located in {output_directory}")
     end_time = time.time()  # End time

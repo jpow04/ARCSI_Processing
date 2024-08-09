@@ -43,8 +43,8 @@ def batch_parameters(output_dir, dem_dir, temp_dir, input_dir, batch_process):
         'dem': dem_dir,  # DEM directory
         'demnodata': -99.0,  # No data value for dem
         'cloudmethods': 'S2LESSFMSK',  # Cloud mask method
-        'fullimgouts': False,  # Include full image outputs flag
-        'keepfileends': ['meta.json', 'stdsref.kea', 'rad.kea'],  # File endings to keep
+        'fullimgouts': True,  # Include full image outputs flag
+        'keepfileends': ['meta.json', 'stdsref.kea'],  # File endings to keep
         'tmpath': temp_dir,  # Temp directory
         'i': input_dir,  # Input directory
         'e': '*MTD*.xml',  # Metadata file to search for
